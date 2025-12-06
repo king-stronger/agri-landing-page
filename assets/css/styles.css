@@ -108,7 +108,7 @@
     }
     
     p, span {
-        max-width: 65ch;
+        max-width: 70ch;
         line-height: 1.6;
         text-wrap: pretty;
         color: var(--text-muted);
@@ -189,6 +189,24 @@
         column-gap: var(--gap-2);
     }
     /****************************************** HERO **************************/
+
+    /****************************************** CHALLENGES **************************/
+    .challenge-list {
+        display: grid;
+        gap: var(--gap-2);
+        grid-template-rows: auto auto;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr));
+    }
+
+
+    .challenge {
+        display: grid;
+        grid-row: span 2;
+        gap: var(--gap-0);
+        grid-template-rows: subgrid;
+    }
+    /****************************************** CHALLENGES **************************/
+
 }
 
 @layer utilities {
@@ -230,6 +248,10 @@
         font-size: var(--fs-100);
     }
 
+    .text-xm {
+        font-size: calc((var(--fs-100) + var(--fs-200)) / 2);
+    }
+
     .text-sm {
         font-size: var(--fs-200);
     }
@@ -264,6 +286,7 @@
 
     .text-center {
         text-align: center;
+        margin-inline: auto;
     }
 
     .text-bold {
