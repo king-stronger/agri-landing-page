@@ -10,71 +10,89 @@
 <body>
     <header>
         <div class="wrapper">
-            <h1>AgriConnect Africa</h1>
+            <h1 class="text">AgriConnect Africa</h1>
 
             <nav>
-                <ul class="menu">
-                    <li><a href="#">Accueil</a></li>
-                    <li><a href="#">Fonctionnalités</a></li>
-                    <li><a href="#">Données Agricoles</a></li>
-                    <li><a href="#">Coopératives</a></li>
-                    <li><a href="#">Ressources</a></li>
-                    <li><a href="#">À propos</a></li>
+                <ul class="menu" id="menu">
+                    <li class="close-menu" id="close-menu">
+                        <a href="#" class="nav-link ri-close-large-line" aria-label="close menu"></a>
+                    </li>
+                    <li><a href="#" class="nav-link">Accueil</a></li>
+                    <li><a href="#" class="nav-link">Fonctionnalités</a></li>
+                    <li><a href="#" class="nav-link">Données Agricoles</a></li>
+                    <li><a href="#" class="nav-link">Coopératives</a></li>
+                    <li><a href="#" class="nav-link">Ressources</a></li>
+                    <li><a href="#" class="nav-link">À propos</a></li>
+                    <li><a href="#" id="theme-button" class="nav-link ri-sun-line"></a></li>
                 </ul>
+                <button class="nav-link open-menu" id="open-menu">
+                    <i class="ri-menu-line"></i>
+                </button>
             </nav>
         </div>
     </header>
 
     <section class="hero-section">
-        <div class="wrapper">
-            <div class="hero-content flow">
-                <h2 class="text-md">L'agriculture africaine entre dans une nouvelle ère</h2>
-                <p>
+        <div class="full-wrapper">
+            <div class="hero-img-wrapper">
+                <picture>
+                    <source media="(min-width: 750px)" srcset="https://placehold.co/1600x600">
+                    <img src="https://placehold.co/400x800" width="600" height="600" alt="AgriConnect Africa">
+                </picture>
+            </div>    
+            <div class="hero-content">
+                <h2 class="text-lg text-center">L'agriculture africaine entre dans une nouvelle ère</h2>
+                <p class="text text-center">
                     AgriConnect Africa fournit aux producteurs, coopératives et organisations agricoles les données, outils et informations dont ils ont besoin pour prendre de meilleures décisions : météo locale, prix du marché, conseils agronomiques, gestion des cultures et analyse des tendances
                 </p>
                 <div>
                     <a href="#" class="btn btn-primary">Explorer la plateforme</a>
-                    <a href="#" class="btn btn-secondary">Accéder aux données agricoles</a>
+                    <a href="#" class="btn btn-secondary">
+                        <span>Accéder aux données agricoles</span>
+                        <i class="ri-arrow-right-line"></i>
+                    </a>
                 </div>
-            </div>
-            <div class="hero-img-wrapper">
-                <img src="" alt="">
             </div>
         </div>
     </section>
 
     <section class="challenges-section">
-        <div class="wrapper flow">
+        <div class="wrapper flow-md">
             <h2 class="text-md">Les défis agricoles d’aujourd’hui</h2>
             <p class="text-sm">
                 Le secteur agricole africain représente plus de 60% de la population active, mais reste l’un des plus exposés aux risques climatiques, à l’instabilité des marchés et au manque d’informations fiables. Les décisions sont souvent prises sans données à jour, ce qui limite les rendements et augmente les pertes
             </p>
             <ul class="challenge-list">
                 <li class="challenge">
+                    <i class="ri-cloud-off-line text-md"></i>
                     <h3 class="text-sm">Manque de données météorologiques fiables</h3>
                     <p class="text-xm">
                         Les producteurs planifient leurs semis et récoltes sans connaître les prévisions précises de la saison
                     </p>
                 </li>
                 <li class="challenge">
+                    <i class="ri-line-chart-line text-md"></i>
                     <h3 class="text-sm">Volatilité des prix sur les marchés</h3>
                     <p class="text-xm">
                         Les prix du maïs, riz, mil ou arachide peuvent varier d’un marché à l’autre sans transparence
                     </p>
                 </li>
                 <li class="challenge">
+                    <i class="ri-user-voice-line text-md"></i>
                     <h3 class="text-sm">Accès limité aux conseils agronomiques</h3>
                     <p class="text-xm">
                         Les bonnes pratiques agricoles ne sont pas toujours accessibles dans les zones rurales
                     </p>
                 </li>
                 <li class="challenge">
+                    <i class="ri-file-paper-line text-md"></i>
                     <h3 class="text-sm">Absence de digitalisation des coopératives</h3>
                     <p class="text-xm">
                         Les regroupements agricoles gèrent encore leurs activités manuellement, avec perte d’efficacité
                     </p>
                 </li>
                 <li class="challenge">
+                    <i class="ri-seedling-line text-md"></i>
                     <h3 class="text-sm">Rendement faible malgré un potentiel énorme</h3>
                     <p class="text-xm">
                         Les producteurs disposent rarement d’un outil d’analyse ou de suivi de culture
@@ -85,7 +103,7 @@
     </section>
 
     <section class="features-section">
-        <div class="wrapper flow">
+        <div class="wrapper flow-md">
             <h2 class="text-md text-center">Nos outils pour transformer la production agricole</h2>
             <ul class="feature-list">
                 <li class="feature">
@@ -128,20 +146,37 @@
         </div>
     </section>
 
-    <section class="map-section">
-        <div class="wrapper flow">
-            <h2 class="text-md text-center">Une vision claire de l’agriculture africaine</h2>
-            <p class="text-sm text-center">
-                Visualisez d’un coup d’œil les zones agricoles majeures, les tendances climatiques et les opportunités de culture à travers toute l’Afrique de l’Ouest. Notre carte interactive (présentation statique) offre un aperçu intuitif des principales informations utiles aux producteurs et organisations
-            </p>
-            <div class="map-wrapper">
-
+    <section class="audience-section">
+        <div class="wrapper">
+            <div class="audience-content flow">
+                <h2 class="text-md">Une plateforme pensée pour tous les acteurs du secteur</h2>
+                <ul class="target-list flow-sm">
+                    <li class="target">
+                        <h3 class="text-sm"><i class="ri-checkbox-blank-circle-line"></i> Producteurs individuels</h3>
+                        <p class="text-xm">Pour planifier, décider et améliorer le rendement</p>
+                    </li>
+                    <li class="target">
+                        <h3 class="text-sm"><i class="ri-checkbox-blank-circle-line"></i> Coopératives agricoles</h3>
+                        <p class="text-xm">Pour mieux organiser la production et les adhérents</p>
+                    </li>
+                    <li class="target">
+                        <h3 class="text-sm"><i class="ri-checkbox-blank-circle-line"></i> Acheteurs et transformateurs</h3>
+                        <p class="text-xm">Pour suivre l’évolution des prix et anticiper les achats</p>
+                    </li>
+                    <li class="target">
+                        <h3 class="text-sm"><i class="ri-checkbox-blank-circle-line"></i> ONG et institutions agricoles</h3>
+                        <p class="text-xm">Pour obtenir des données fiables et accompagner les communautés</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="audience-img-wrapper">
+                <img src="https://placehold.co/600x400" alt="AgriConnect Africa">
             </div>
         </div>
     </section>
 
     <section class="metrics-section">
-        <div class="wrapper flow">
+        <div class="wrapper flow-md">
             <h2 class="text-md text-center">Les chiffres parlent d’eux-mêmes</h2>
             <ul class="metric-list">
                 <li class="metric">
@@ -165,32 +200,32 @@
     </section>
 
     <section class="testimonials-section">
-        <div class="wrapper flow">
-            <h2 class="text-md">Ils utilisent AgriConnect Africa</h2>
+        <div class="wrapper flow-md">
+            <h2 class="text-md text-center">Ils utilisent AgriConnect Africa</h2>
             <ul class="testimonial-list">
-                <li class="testimonial flow-xs">
-                    <p>
+                <li class="testimonial">
+                    <div>
                         <h3 class="text-sm">Mamadou</h3>
                         <span class="text-xs">Producteur à Sikasso (Mali)</span>
-                    </p>
+                    </div>
                     <p class="text-xm">
                         “Avec les prévisions météo localisées, j’ai réussi à semer au bon moment. Résultat : +22% de rendement sur mon maïs cette saison.”
                     </p>
                 </li>
-                <li class="testimonial flow-xs">
-                    <p>
+                <li class="testimonial">
+                    <div>
                         <h3 class="text-sm">Awa</h3>
                         <span class="text-xs">Membre d’une coopérative à Bobo-Dioulasso (Burkina Faso)</span>
-                    </p>
+                    </div>
                     <p class="text-xm">
                         “Le suivi des prix m’a permis de négocier correctement mes ventes. Nous avons augmenté nos revenus dès le premier mois.”
                     </p>
                 </li>
-                <li class="testimonial flow-xs">
-                    <p>
+                <li class="testimonial">
+                    <div>
                         <h3 class="text-sm">Koffi</h3>
                         <span class="text-xs">Riziculteur à Dabou (Côte d’Ivoire)</span>
-                    </p>
+                    </div>
                     <p class="text-xm">
                         “Les conseils agronomiques sont clairs et faciles à appliquer. Je recommande à tous les jeunes agriculteurs.”
                     </p>
@@ -199,86 +234,80 @@
         </div>
     </section>
 
-    <section class="audience-section">
-        <div class="wrapper">
-            <h2>Une plateforme pensée pour tous les acteurs du secteur</h2>
-            <ul class="target-list">
-                <li class="target">
-                    <h3>Producteurs individuels</h3>
-                    <p>Pour planifier, décider et améliorer le rendement</p>
-                </li>
-                <li class="target">
-                    <h3>Coopératives agricoles</h3>
-                    <p>Pour mieux organiser la production et les adhérents</p>
-                </li>
-                <li class="target">
-                    <h3>Acheteurs et transformateurs</h3>
-                    <p>Pour suivre l’évolution des prix et anticiper les achats</p>
-                </li>
-                <li class="target">
-                    <h3>ONG et institutions agricoles</h3>
-                    <p>Pour obtenir des données fiables et accompagner les communautés</p>
-                </li>
-            </ul>
+    <section class="cta-section">
+        <div class="wrapper flow">
+            <h2 class="text-md text-center">Faites le choix d’une agriculture moderne, connectée et durable</h2>
+            <p class="text-sm text-center">Accédez à des données fiables, optimisez vos décisions et participez à la transformation agricole en Afrique</p>
+            <a href="#" class="btn btn-primary">Découvrir AgriConnect Africa</a>
         </div>
     </section>
 
-    <section class="cta-section">
-        <div class="wrapper">
-            <h2>Faites le choix d’une agriculture moderne, connectée et durable</h2>
-            <p>Accédez à des données fiables, optimisez vos décisions et participez à la transformation agricole en Afrique</p>
-            <a href="#">Découvrir AgriConnect Africa</a>
+    <section class="map-section">
+        <div class="wrapper flow">
+            <h2 class="text-md text-center">Une vision claire de l’agriculture africaine</h2>
+            <p class="text-sm text-center">
+                Visualisez d’un coup d’œil les zones agricoles majeures, les tendances climatiques et les opportunités de culture à travers toute l’Afrique de l’Ouest. Notre carte interactive (présentation statique) offre un aperçu intuitif des principales informations utiles aux producteurs et organisations
+            </p>
+            <div class="map-wrapper">
+                <iframe
+                    width="425" height="350"
+                    src="https://www.openstreetmap.org/export/embed.html?bbox=-8.020019531250002%2C12.63506197686334%2C-8.006222248077394%2C12.64221221528308&amp;layer=mapnik&amp;marker=12.638637121084221%2C-8.013120889663696">
+                </iframe>
+            </div>
         </div>
     </section>
 
     <footer>
         <div class="wrapper">
-            <div class="logo">
-                <h2>AgriConnect Africa</h2>
-                <p>
+            <div class="logo flow-xs">
+                <h2 class="text-sm">AgriConnect Africa</h2>
+                <p class="text-xm">
                     Accélérer la modernisation agricole en Afrique grâce à des données fiables, compréhensibles et accessibles à tous
                 </p>
-                <span>
-                    Nous aidons les producteurs, coopératives, ONG et acteurs du secteur à prendre de meilleures décisions et à créer une agriculture plus durable
-                </span>
             </div>
 
             <div class="quick-links">
-                <a href="#">Accueil</a>
-                <a href="#">Fonctionnalités</a>
-                <a href="#">Données Agricoles</a>
-                <a href="#">Coopératives</a>
-                <a href="#">À propos</a>
+                <h2 class="text-sm">Liens rapides</h2>
+                <a href="#" class="link text-xm">Accueil</a>
+                <a href="#" class="link text-xm">Fonctionnalités</a>
+                <a href="#" class="link text-xm">Données Agricoles</a>
+                <a href="#" class="link text-xm">Coopératives</a>
+                <a href="#" class="link text-xm">À propos</a>
             </div>
 
             <div class="ressources">
-                <a href="#">Guides agronomiques</a>
-                <a href="#">Rapports & analyses</a>
-                <a href="#">Données de marché</a>
-                <a href="#">FAQ</a>
+                <h2 class="text-sm">Ressources</h2>
+                <a href="#" class="link text-xm">Guides agronomiques</a>
+                <a href="#" class="link text-xm">Rapports & analyses</a>
+                <a href="#" class="link text-xm">Données de marché</a>
+                <a href="#" class="link text-xm">FAQ</a>
             </div>
 
-            <div class="contact">
-                <p>
-                    <a href="#" aria-label="Facebook contact" class="ri-facebook-circle-fill"></a>
-                    <a href="#" aria-label="LinkedIn contact" class="ri-linkedin-box-fill"></a>
-                    <a href="#" aria-label="Twitter contact" class="ri-twitter-x-fill"></a>
-                    <a href="#" aria-label="YouTube contact" class="ri-youtube-fill"></a>
+            <div class="contact flow-xs">
+                <h2 class="text-sm">Contact</h2>
+                <p class="social-links text">
+                    <a href="#" aria-label="Facebook contact" class="link ri-facebook-circle-fill"></a>
+                    <a href="#" aria-label="LinkedIn contact" class="link ri-linkedin-box-fill"></a>
+                    <a href="#" aria-label="Twitter contact" class="link ri-twitter-x-fill"></a>
+                    <a href="#" aria-label="YouTube contact" class="link ri-youtube-fill"></a>
                 </p>
-                <p>
-                    <span>Email</span>
-                    <a href="#">contact@agriconnect.af</a>
+                <p class="text-xm">
+                    <span>Email:</span>
+                    <a href="#" class="link">contact@agriconnect.af</a>
                 </p>
-                <p>
-                    <span>Téléphone</span>
-                    <a href="#">+223 76 00 00 00</a>
+                <p class="text-xm">
+                    <span>Téléphone:</span>
+                    <a href="#" class="link">+223 76 00 00 00</a>
                 </p>
-                <p>
-                    <span>Localisation</span>
-                    <address>Bamako, Mali</address>
+                <p class="text-xm">
+                    <span>Localisation:</span>
+                    <span class="text-lead">Bamako, Mali</span>
                 </p>
             </div>
+            <p class="mention text-center text-sm">© 2025 AgriConnect Africa — Tous droits réservés.</p>
         </div>
     </footer>
+
+    <script src="/assets/js/main.js" defer></script>
 </body>
 </html>
