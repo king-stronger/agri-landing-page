@@ -35,20 +35,21 @@
     --gap-10: clamp(13.5rem, 11.3523rem + 9.5455vw, 18.75rem);
 
     /****************** Colors ************/
-    --bg-dark: hsl(120 15% 5%);
-    --bg: hsl(120 15% 10%);
-    --bg-light: hsl(120 15% 15%);
-
-    --text: hsl(120 15% 95%);
-    --text-muted : hsl(120 15% 70%);
+    --bg-light: hsl(120 63% 97%);
+    --bg: hsl(120 37% 73%);
+    --bg-dark: hsl(120 15% 100%);
 
     --clr-black: hsl(0 5% 5%);
     --clr-white: hsl(0 5% 95%);
-    --clr-accent: hsl(60 71% 45%);
-    --clr-primary: hsl(120 71% 45%);
 
-    --clr-border: hsl(120 15% 20%);
-    --clr-container: hsl(120 17% 88%);
+    --text: hsl(120 15% 5%);
+    --text-muted : hsl(120 15% 30%);
+    --clr-dark-light: hsl(120 15% 5%);
+
+    --clr-accent: hsl(120 26% 29%);
+    --clr-primary: hsl(120 37% 63%);
+
+    --clr-border: hsl(120 15% 80%);
 
     /****************** Shadows ************/
     --shadow-light:
@@ -64,23 +65,21 @@
     0 0 24px hsl(0 0% 0% / 0.10);
 }
 
+body.dark {
+    --bg-dark: hsl(120 15% 10%);
+    --bg: hsl(120 15% 15%);
+    --bg-light: hsl(120 15% 20%);
 
-@media (prefers-color-scheme: light) {
-    :root {
-    --bg-light: hsl(120 25% 75%);
-    --bg: hsl(120 63% 95%);
-    --bg-dark: hsl(120 15% 100%);
+    --text: hsl(120 15% 95%);
+    --text-muted : hsl(120 15% 70%);
+    --clr-dark-light: hsl(120 15% 95%);
 
-    --text: hsl(120 15% 5%);
-    --text-muted : hsl(120 15% 30%);
-
-    --clr-accent: hsl(60 71% 45%);
+    --clr-accent: hsl(300 71% 45%);
     --clr-primary: hsl(120 71% 45%);
 
-    --clr-border: hsl(120 15% 80%);
-    }
+    --clr-border: hsl(120 15% 20%);
+    --clr-container: hsl(120 17% 88%);
 }
-
 
 @layer reset, base, layout, utilities;
 
@@ -120,7 +119,7 @@
     
     a {
         text-decoration: none;
-        color: inherit;
+        color: var(--clr-black);
     }
     
     button {
@@ -136,7 +135,7 @@
         background: none;
     }
     
-    img, video, picture, svg {
+    img, video, picture, svg, iframe {
         height: auto;
         display: block;
         max-width: 100%;
@@ -148,11 +147,102 @@
         color: var(--text);
         background-color: var(--bg-dark);
     }
+
+    /****************************************** HEADER **************************/
+    header {
+        background-color: var(--bg);
+    }
+
+    .nav-link {
+        color: var(--text);
+    }
+
+    @media (width < 750px) {
+        .menu {
+            transition: translate 300ms ease;
+            background-color: var(--bg-light);
+        }
+    }
+    /****************************************** HEADER **************************/
+
+    /****************************************** HERO **************************/
+    /****************************************** HERO **************************/
+
+    /****************************************** CHALLENGES **************************/
+    .challenge {
+        border-radius: .5rem;
+        background-color: var(--bg-light);
+        padding: var(--padding-4) var(--padding-2);
+    }
+    /****************************************** CHALLENGES **************************/
     
+    /****************************************** FEATURES **************************/
+    .features-section {
+        background-color: var(--bg);
+    }
+
+    .feature {
+        border-radius: .5rem;
+        background-color: var(--bg-dark);
+        padding: var(--padding-4) var(--padding-2);
+
+        body.dark & {
+            background-color: var(--bg-light);
+        }
+    }
+    /****************************************** FEATURES **************************/
+
+    /****************************************** MAP **************************/
+    .map-wrapper iframe {
+        border-radius: .5rem;
+    }
+    /****************************************** MAP **************************/
+
+    /****************************************** METRICS **************************/
+    .metric {
+        border-radius: .5rem;
+        background-color: var(--bg-light);
+        padding: var(--padding-4) var(--padding-2);
+    }
+    /****************************************** METRICS **************************/
+
+    /****************************************** TESTIMONIALS **************************/
+    .testimonial {
+        border-radius: .5rem;
+        background-color: var(--bg-light);
+        padding: var(--padding-4) var(--padding-2);
+
+        span {
+            color: var(--text);
+        }
+    }
+    /****************************************** TESTIMONIALS **************************/
+
+    /****************************************** AUDIENCE **************************/
+    /****************************************** AUDIENCE **************************/
+
+    /****************************************** CTA **************************/
+    .cta-section .wrapper {
+        border-radius: .5rem;
+        background-color: var(--bg);
+    }
+    /****************************************** CTA **************************/
+
+    /****************************************** FOOTER **************************/
+    footer {
+        background-color: var(--bg);
+    }
+    /****************************************** FOOTER **************************/
 }
 
 @layer layout {
     /****************************************** HEADER **************************/
+    header {
+        top: 0;
+        z-index: 10;
+        position: sticky;
+    }
+
     header .wrapper {
         display: flex;
         align-items: center;
@@ -162,31 +252,105 @@
 
     .menu {
         display: flex;
-        gap: var(--gap-2);
+        gap: var(--gap-1);
         align-items: center;
+    }
+
+    @media (width > 750px) {
+        .open-menu, .close-menu {
+            display: none;
+        }
+    }
+
+    @media (width < 750px) {
+        .menu {
+            z-index: 10;
+            inset: 0 0 auto 0;
+            position: absolute;
+            translate: 0 -100%;
+
+            padding-block: var(--padding-7);
+
+            display: flex;
+            gap: var(--gap-4);
+            flex-direction: column;
+
+            background-color: var(--bg-light);
+        }
+
+        .menu.show {
+            translate: 0 0;
+        }
     }
     /****************************************** HEADER **************************/
 
     /****************************************** SECTIONS **************************/
     section + section {
-        margin-top: var(--gap-9);
+        margin-top: var(--gap-8);
+    }
+
+    .wrapper {
+        padding-block: var(--gap-6);
     }
     /****************************************** SECTIONS **************************/
 
     /****************************************** HERO **************************/
-    .hero-section {
-        margin-top: var(--gap-6);
-    }
-
-    .hero-section .wrapper {
+    .hero-section .full-wrapper {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(min(400px, 100%), 1fr));
+        place-items: center;
+        grid-template-areas: "stacking";
+        
+        > * {
+            grid-area: stacking;
+        }
     }
 
-    .hero-content div {
+    .hero-img-wrapper {
+        z-index: 1;
+        position: relative;
+
+        img {
+            width: 100%;
+        }
+    }
+
+    @media (width < 750px) {
+        .hero-img-wrapper img {
+            aspect-ratio: 3 / 5;
+            width: 100%;
+        }
+    }
+    
+     .hero-img-wrapper::after {
+        inset: 0;
+        z-index: 1;
+        content: "";
+        position: absolute;
+        background: hsl(120 50% 10% / 0.6);
+    }
+
+    .hero-content {
+        z-index: 2;
+
+        padding-block: var(--padding-5);
+        padding-inline: var(--padding-2);
+
         display: flex;
+        gap: var(--gap-3);
         align-items: center;
-        column-gap: var(--gap-2);
+        flex-direction: column;
+
+        div {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--gap-2);
+            align-items: center;
+            justify-content: center;
+        }
+
+        * {
+            color: var(--clr-white);
+        }
     }
     /****************************************** HERO **************************/
 
@@ -194,14 +358,14 @@
     .challenge-list {
         display: grid;
         gap: var(--gap-2);
-        grid-template-rows: auto auto;
-        grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr));
+        grid-template-rows: auto auto auto;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
     }
 
 
     .challenge {
         display: grid;
-        grid-row: span 2;
+        grid-row: span 3;
         gap: var(--gap-0);
         grid-template-rows: subgrid;
     }
@@ -223,6 +387,17 @@
         grid-template-rows: subgrid;
     }
     /****************************************** FEATURES **************************/
+
+    /****************************************** MAP **************************/
+    .map-wrapper iframe {
+        width: 100%;
+        aspect-ratio: 5 / 2;
+
+        @media (width < 750px) {
+            aspect-ratio: 5 / 3;
+        }
+    }
+    /****************************************** MAP **************************/
 
     /****************************************** METRICS **************************/
     .metric-list {
@@ -246,9 +421,58 @@
     .testimonial-list {
         display: grid;
         gap: var(--gap-3);
+        grid-template-rows: auto auto;
         grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
     }
+
+    .testimonial {
+        display: grid;
+        grid-row: span 2;
+        gap: var(--gap-0);
+        grid-template-rows: subgrid;
+    }
     /****************************************** TESTIMONIALS **************************/
+
+    /****************************************** AUDIENCE **************************/
+    .audience-section .wrapper {
+        display: grid;
+        gap: var(--gap-4);
+        align-items: center;
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 350px), 1fr));
+    }
+    /****************************************** AUDIENCE **************************/
+
+    /****************************************** CTA **************************/
+    .cta-section .wrapper {
+        display: flex;
+        gap: var(--gap-0);
+        align-items: center;
+        flex-direction: column;
+    }
+    /****************************************** CTA **************************/
+
+    /****************************************** FOOTER **************************/
+    footer {
+        margin-top: var(--gap-8);
+    }
+
+    footer .wrapper {
+        display: grid;
+        gap: var(--gap-4);
+        padding-block: var(--padding-6) var(--padding-4);
+        grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+    }
+
+    .quick-links, .ressources {
+        display: flex;
+        gap: var(--gap-0);
+        flex-direction: column;
+    }
+
+    .mention {
+        grid-column: 1 / -1;
+    }
+    /****************************************** FOOTER **************************/
 }
 
 @layer utilities {
@@ -274,8 +498,8 @@
     }
 
     .wrapper {
-        max-width: 1080px;
         margin-inline: auto;
+        width: min(100%, 1080px);
         padding-inline: var(--padding-3);
     }
     /*********************** STRUCTURE**************************/
@@ -360,7 +584,7 @@
     .btn-primary {
         color: var(--clr-white);
         background-color: var(--clr-primary);
-        transition: background-color 0.3s, color 0.3s;
+        transition: background-color 0.2s, color 0.2s;
 
         * {
             color: var(--clr-white);
@@ -368,17 +592,18 @@
     }    
 
     .btn-secondary {
-        color: var(--clr-primary);
-        outline: 1px solid var(--clr-primary);
-        transition: background-color 0.3s, color 0.3s;
+        color: var(--clr-black);
+        outline: 1px solid var(--clr-black);
+        transition: background-color 0.2s, color 0.2s;
 
         * {
-            color: var(--clr-primary);
+            color: var(--clr-black);
         }
     }
 
     .btn-primary:hover, .btn-secondary:hover {
         outline: none;
+        color: var(--clr-white);
         background-color: var(--clr-accent);
 
         * {
@@ -387,13 +612,20 @@
     }
 
     .link {
+        border: none;
+        outline: none;
+        text-decoration: none;
+        color: var(--clr-dark-light);
+    }
+
+    .link-alt {
         color: var(--clr-primary);
         text-decoration: underline;
         text-underline-offset: 4px;
-        transition: color 0.3s;
+        transition: color 0.2s;
     }
 
-    .link:hover {
+    .link:hover, .link-alt:hover {
         text-decoration: none;
         color: var(--clr-accent);
     }
