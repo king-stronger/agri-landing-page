@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 :root {
     /****************** Font sizes ************/
     --fs-000: clamp(0.5277rem, 0.7015rem + -0.2242vw, 0.651rem);
@@ -35,19 +37,19 @@
     --gap-10: clamp(13.5rem, 11.3523rem + 9.5455vw, 18.75rem);
 
     /****************** Colors ************/
-    --bg-light: hsl(120 63% 97%);
-    --bg: hsl(120 37% 73%);
+    --bg-light: oklch(0.9239 0.0757 90);
+    --bg: oklch(0.3826 0.0553 150);
     --bg-dark: hsl(120 15% 100%);
 
     --clr-black: hsl(0 5% 5%);
     --clr-white: hsl(0 5% 95%);
 
     --text: hsl(120 15% 5%);
-    --text-muted : hsl(120 15% 30%);
+    --text-muted : hsl(120 15% 25%);
     --clr-dark-light: hsl(120 15% 5%);
 
-    --clr-accent: hsl(120 26% 29%);
-    --clr-primary: hsl(120 37% 63%);
+    --clr-accent: oklch(0.7175 0.2115 90);
+    --clr-primary: oklch(0.7175 0.2115 30);
 
     --clr-border: hsl(120 15% 80%);
 
@@ -65,22 +67,6 @@
     0 0 24px hsl(0 0% 0% / 0.10);
 }
 
-body.dark {
-    --bg-dark: hsl(120 15% 10%);
-    --bg: hsl(120 15% 15%);
-    --bg-light: hsl(120 15% 20%);
-
-    --text: hsl(120 15% 95%);
-    --text-muted : hsl(120 15% 70%);
-    --clr-dark-light: hsl(120 15% 95%);
-
-    --clr-accent: hsl(300 71% 45%);
-    --clr-primary: hsl(120 71% 45%);
-
-    --clr-border: hsl(120 15% 20%);
-    --clr-container: hsl(120 17% 88%);
-}
-
 @layer reset, base, layout, utilities;
 
 @layer reset {
@@ -94,7 +80,7 @@ body.dark {
     html {
         font-size: 16px;
         scroll-behavior: smooth;
-        font-family: inter, sans-serif;
+        font-family: "DM Sans", "Inter", inter, sans-serif;
     }
     
     body {
@@ -153,19 +139,34 @@ body.dark {
         background-color: var(--bg);
     }
 
+    header h1 {
+        color: var(--clr-white);
+    }
+
     .nav-link {
-        color: var(--text);
+        color: var(--clr-white);
+    }
+
+    .nav-link:hover  {
+        color: var(--clr-primary);
     }
 
     @media (width < 750px) {
         .menu {
             transition: translate 300ms ease;
-            background-color: var(--bg-light);
+            background-color: var(--bg);
         }
     }
     /****************************************** HEADER **************************/
 
     /****************************************** HERO **************************/
+    .hero-section .full-wrapper {
+        border-image: fill 1 linear-gradient(hsl(0 0% 0% / .6), hsl(0 0% 0% / .6));
+
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-image: url("/assets/img/hero.png");
+    }
     /****************************************** HERO **************************/
 
     /****************************************** CHALLENGES **************************/
@@ -179,6 +180,10 @@ body.dark {
     /****************************************** FEATURES **************************/
     .features-section {
         background-color: var(--bg);
+
+        h2 {
+            color: var(--clr-white);
+        }
     }
 
     .feature {
@@ -219,18 +224,42 @@ body.dark {
     /****************************************** TESTIMONIALS **************************/
 
     /****************************************** AUDIENCE **************************/
+    .audience-section img {
+        border-radius: .5rem;
+
+        @supports(corner-shape: squircle){
+            border-radius: 3rem;
+            corner-shape: squircle;
+        }
+    }
     /****************************************** AUDIENCE **************************/
 
     /****************************************** CTA **************************/
     .cta-section .wrapper {
         border-radius: .5rem;
         background-color: var(--bg);
+
+        h2 {
+            color: hsl(120 10% 95%);
+        }
+
+        p, span {
+            color: hsl(120 10% 75%);
+        }
     }
     /****************************************** CTA **************************/
 
     /****************************************** FOOTER **************************/
     footer {
         background-color: var(--bg);
+
+        h3 {
+            color: hsl(120 10% 95%);
+        }
+
+        p, span {
+            color: hsl(120 10% 75%);
+        }
     }
     /****************************************** FOOTER **************************/
 }
@@ -274,8 +303,6 @@ body.dark {
             display: flex;
             gap: var(--gap-4);
             flex-direction: column;
-
-            background-color: var(--bg-light);
         }
 
         .menu.show {
@@ -296,13 +323,7 @@ body.dark {
 
     /****************************************** HERO **************************/
     .hero-section .full-wrapper {
-        display: grid;
-        place-items: center;
-        grid-template-areas: "stacking";
-        
-        > * {
-            grid-area: stacking;
-        }
+        padding-block: var(--gap-6);
     }
 
     .hero-img-wrapper {
@@ -448,6 +469,7 @@ body.dark {
         gap: var(--gap-0);
         align-items: center;
         flex-direction: column;
+        padding-inline: var(--padding-2);
     }
     /****************************************** CTA **************************/
 
@@ -499,8 +521,7 @@ body.dark {
 
     .wrapper {
         margin-inline: auto;
-        width: min(100%, 1080px);
-        padding-inline: var(--padding-3);
+        width: min(100% - 2rem, 1080px);
     }
     /*********************** STRUCTURE**************************/
 
@@ -556,7 +577,11 @@ body.dark {
     }
 
     .text-bold {
-        font-weight: 700;
+        font-weight: 500;
+    }
+
+    .text-bolder {
+        font-weight: 600;
     }
     /*********************** TYPOGRAPHY**************************/
 
@@ -581,27 +606,32 @@ body.dark {
         padding: var(--padding-2) var(--padding-3);
     }
 
-    .btn-primary {
-        color: var(--clr-white);
-        background-color: var(--clr-primary);
+    :where(.btn-primary, .btn-secondary, .btn-secondary-alt){
+        color: var(--_clr-btn-text);
+        background-color: var(--_clr-btn-bg);
         transition: background-color 0.2s, color 0.2s;
 
         * {
-            color: var(--clr-white);
-        }
+            color: var(--_-btn-text);
+        } 
+    }
+
+    .btn-primary {
+        --_clr-btn-text: var(--clr-white);
+        --_clr-btn-bg: var(--clr-primary);
     }    
 
     .btn-secondary {
-        color: var(--clr-black);
+        --_clr-btn-text: var(--clr-black);
         outline: 1px solid var(--clr-black);
-        transition: background-color 0.2s, color 0.2s;
-
-        * {
-            color: var(--clr-black);
-        }
     }
 
-    .btn-primary:hover, .btn-secondary:hover {
+    .btn-secondary-alt {
+        --_clr-btn-text: var(--clr-white);
+        outline: 1px solid var(--clr-white);
+    }
+
+    :where(.btn-primary, .btn-secondary, .btn-secondary-alt):hover {
         outline: none;
         color: var(--clr-white);
         background-color: var(--clr-accent);
@@ -611,26 +641,22 @@ body.dark {
         }
     }
 
-    .link {
+    :is(.link, .link-alt){
         border: none;
         outline: none;
         text-decoration: none;
+        transition: color 0.2s;
+    }
+
+    .link {
         color: var(--clr-dark-light);
     }
 
     .link-alt {
-        color: var(--clr-primary);
-        text-decoration: underline;
-        text-underline-offset: 4px;
-        transition: color 0.2s;
+        color: var(--clr-white);
     }
 
     .link:hover, .link-alt:hover {
-        text-decoration: none;
-        color: var(--clr-accent);
-    }
-
-    .accent {
         color: var(--clr-primary);
     }
     /*********************** BUTTONS**************************/
