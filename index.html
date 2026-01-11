@@ -1,12 +1,34 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>AgriConnect Africa</title>
+    <meta name="description" content="AgriConnect Africa fournit aux producteurs, coopératives et organisations agricoles les données et outils nécessaires pour optimiser leurs décisions et améliorer leurs rendements.">
+
+    <meta property="og:title" content="AgriConnect Africa">
+    <meta property="og:description" content="Accédez à des données fiables et des outils pour transformer l’agriculture africaine.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://king-stronger.github.io/agri-landing-page/">
+    <meta property="og:image" content="https://king-stronger.github.io/agri-landing-page/assets/img/hero.avif">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
     <link rel="stylesheet" href="assets/css/styles.css">
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" rel="stylesheet" />
+    
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css">
+    </noscript>
+    
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    </noscript>
 </head>
+
 <body>
     <header>
         <div class="wrapper">
@@ -15,7 +37,7 @@
             <nav>
                 <ul class="menu" id="menu">
                     <li class="close-menu" id="close-menu">
-                        <a href="#" class="nav-link ri-close-large-line" aria-label="close menu"></a>
+                        <a href="#" class="nav-link ri-close-large-line" role="button" aria-label="Fermer le menu"></a>
                     </li>
                     <li><a href="#" class="nav-link">Accueil</a></li>
                     <li><a href="#" class="nav-link">Fonctionnalités</a></li>
@@ -24,7 +46,7 @@
                     <li><a href="#" class="nav-link">Ressources</a></li>
                     <li><a href="#" class="nav-link">À propos</a></li>
                 </ul>
-                <button class="nav-link open-menu" id="open-menu">
+                <button class="nav-link open-menu" id="open-menu" aria-label="Ouvrir le menu">
                     <i class="ri-menu-line"></i>
                 </button>
             </nav>
@@ -51,43 +73,43 @@
 
     <section class="challenges-section">
         <div class="wrapper flow-md">
-            <h2 class="text-md text-bold">Les défis agricoles d’aujourd’hui</h2>
-            <p class="text-sm">
+            <h2 class="text-lg text-bold">Les défis agricoles d’aujourd’hui</h2>
+            <p class="text-xd">
                 Le secteur agricole africain représente plus de 60% de la population active, mais reste l’un des plus exposés aux risques climatiques, à l’instabilité des marchés et au manque d’informations fiables. Les décisions sont souvent prises sans données à jour, ce qui limite les rendements et augmente les pertes
             </p>
             <ul class="challenge-list">
                 <li class="challenge">
-                    <i class="ri-cloud-off-line text-md"></i>
-                    <h3 class="text-sm text-bold">Manque de données météorologiques fiables</h3>
-                    <p class="text-xm">
+                    <i class="ri-cloud-off-line text-lg"></i>
+                    <h3 class="text-xd text-bold">Manque de données météorologiques fiables</h3>
+                    <p class="text-sm">
                         Les producteurs planifient leurs semis et récoltes sans connaître les prévisions précises de la saison
                     </p>
                 </li>
                 <li class="challenge">
-                    <i class="ri-line-chart-line text-md"></i>
-                    <h3 class="text-sm text-bold">Volatilité des prix sur les marchés</h3>
-                    <p class="text-xm">
+                    <i class="ri-line-chart-line text-lg"></i>
+                    <h3 class="text-xd text-bold">Volatilité des prix sur les marchés</h3>
+                    <p class="text-sm">
                         Les prix du maïs, riz, mil ou arachide peuvent varier d’un marché à l’autre sans transparence
                     </p>
                 </li>
                 <li class="challenge">
-                    <i class="ri-user-voice-line text-md"></i>
-                    <h3 class="text-sm text-bold">Accès limité aux conseils agronomiques</h3>
-                    <p class="text-xm">
+                    <i class="ri-user-voice-line text-lg"></i>
+                    <h3 class="text-xd text-bold">Accès limité aux conseils agronomiques</h3>
+                    <p class="text-sm">
                         Les bonnes pratiques agricoles ne sont pas toujours accessibles dans les zones rurales
                     </p>
                 </li>
                 <li class="challenge">
-                    <i class="ri-file-paper-line text-md"></i>
-                    <h3 class="text-sm text-bold">Absence de digitalisation des coopératives</h3>
-                    <p class="text-xm">
+                    <i class="ri-file-paper-line text-lg"></i>
+                    <h3 class="text-xd text-bold">Absence de digitalisation des coopératives</h3>
+                    <p class="text-sm">
                         Les regroupements agricoles gèrent encore leurs activités manuellement, avec perte d’efficacité
                     </p>
                 </li>
                 <li class="challenge">
-                    <i class="ri-seedling-line text-md"></i>
-                    <h3 class="text-sm text-bold">Rendement faible malgré un potentiel énorme</h3>
-                    <p class="text-xm">
+                    <i class="ri-seedling-line text-lg"></i>
+                    <h3 class="text-xd text-bold">Rendement faible malgré un potentiel énorme</h3>
+                    <p class="text-sm">
                         Les producteurs disposent rarement d’un outil d’analyse ou de suivi de culture
                     </p>
                 </li>
@@ -97,41 +119,47 @@
 
     <section class="features-section">
         <div class="wrapper flow-md">
-            <h2 class="text-md text-bold text-center">Nos outils pour transformer la production agricole</h2>
+            <h2 class="text-lg text-bold text-center">Nos outils pour transformer la production agricole</h2>
             <ul class="feature-list">
                 <li class="feature">
-                    <h3 class="text-sm text-bold">Prévisions météo locales précises</h3>
-                    <p class="text-xm">
+                    <i class="ri-sun-cloudy-line text-lg"></i>
+                    <h3 class="text-xd text-bold">Prévisions météo locales précises</h3>
+                    <p class="text-sm">
                         Des données adaptées à chaque région, pour anticiper les pluies, les sécheresses et les meilleures périodes de semis
                     </p>
                 </li>
                 <li class="feature">
-                    <h3 class="text-sm text-bold">Prix du marché actualisés</h3>
-                    <p class="text-xm">
+                    <i class="ri-line-chart-line text-lg"></i>
+                    <h3 class="text-xd text-bold">Prix du marché actualisés</h3>
+                    <p class="text-sm">
                         Suivez en temps réel (simulation statique) les prix du mil, riz, maïs, arachide, bétail et autres produits stratégiques dans plusieurs pays
                     </p>
                 </li>
                 <li class="feature">
-                    <h3 class="text-sm text-bold">Conseils agronomiques personnalisés</h3>
-                    <p class="text-xm">
+                    <i class="ri-plant-line text-lg"></i>
+                    <h3 class="text-xd text-bold">Conseils agronomiques personnalisés</h3>
+                    <p class="text-sm">
                         Recommandations sur les variétés à choisir, la fertilisation, l’irrigation et la lutte contre les maladies
                     </p>
                 </li>
                 <li class="feature">
-                    <h3 class="text-sm text-bold">Suivi des cultures</h3>
-                    <p class="text-xm">
+                    <i class="ri-leaf-line text-lg"></i>
+                    <h3 class="text-xd text-bold">Suivi des cultures</h3>
+                    <p class="text-sm">
                         Interface simple permettant de suivre l’évolution des parcelles et d’anticiper les risques
                     </p>
                 </li>
                 <li class="feature">
-                    <h3 class="text-sm text-bold">Gestion des coopératives</h3>
-                    <p class="text-xm">
+                    <i class="ri-group-line text-lg"></i>
+                    <h3 class="text-xd text-bold">Gestion des coopératives</h3>
+                    <p class="text-sm">
                         Outil statique permettant de visualiser comment les coopératives peuvent organiser leurs adhérents et planifier leurs activités
                     </p>
                 </li>
                 <li class="feature">
-                    <h3 class="text-sm text-bold">Rapports et statistiques agricoles</h3>
-                    <p class="text-xm">
+                    <i class="ri-pie-chart-line text-lg"></i>
+                    <h3 class="text-xd text-bold">Rapports et statistiques agricoles</h3>
+                    <p class="text-sm">
                         Accédez à des analyses synthétiques pour comprendre les tendances agricoles en Afrique
                     </p>
                 </li>
@@ -141,23 +169,23 @@
 
     <section class="metrics-section">
         <div class="wrapper flow-md">
-            <h2 class="text-md text-bold text-center">Les chiffres parlent d’eux-mêmes</h2>
+            <h2 class="text-lg text-bold text-center">Les chiffres parlent d’eux-mêmes</h2>
             <ul class="metric-list">
                 <li class="metric">
-                    <h3 class="text-sm text-bold text-center">+5 200 producteurs accompagnés</h3>
-                    <p class="text-xm text-center">Utilisant nos données et conseils dans 12 pays</p>
+                    <h3 class="text-xd text-bold text-center">+5 200 producteurs accompagnés</h3>
+                    <p class="text-sm text-center">Utilisant nos données et conseils dans 12 pays</p>
                 </li>
                 <li class="metric">
-                    <h3 class="text-sm text-bold text-center">+18% d’augmentation du rendement moyen</h3>
-                    <p class="text-xm text-center">Observée chez les producteurs ayant utilisé l’outil pendant 3 mois</p>
+                    <h3 class="text-xd text-bold text-center">+18% d’augmentation du rendement moyen</h3>
+                    <p class="text-sm text-center">Observée chez les producteurs ayant utilisé l’outil pendant 3 mois</p>
                 </li>
                 <li class="metric">
-                    <h3 class="text-sm text-bold text-center">+128 marchés suivis chaque semaine</h3>
-                    <p class="text-xm text-center">Pour donner une visibilité réelle des prix</p>
+                    <h3 class="text-xd text-bold text-center">+128 marchés suivis chaque semaine</h3>
+                    <p class="text-sm text-center">Pour donner une visibilité réelle des prix</p>
                 </li>
                 <li class="metric">
-                    <h3 class="text-sm text-bold text-center">87% de prévisions saisonnières exactes</h3>
-                    <p class="text-xm text-center">Sur les cultures de mil, maïs et riz</p>
+                    <h3 class="text-xd text-bold text-center">87% de prévisions saisonnières exactes</h3>
+                    <p class="text-sm text-center">Sur les cultures de mil, maïs et riz</p>
                 </li>
             </ul>
         </div>
@@ -166,60 +194,69 @@
     <section class="audience-section">
         <div class="wrapper">
             <div class="audience-content flow">
-                <h2 class="text-md text-bold">Une plateforme pensée pour tous les acteurs du secteur</h2>
+                <h2 class="text-lg text-bold">Une plateforme pensée pour tous les acteurs du secteur</h2>
                 <ul class="target-list flow-sm">
                     <li class="target">
-                        <h3 class="text-sm text-bold"><i class="ri-checkbox-blank-circle-line"></i> Producteurs individuels</h3>
-                        <p class="text-xm">Pour planifier, décider et améliorer le rendement</p>
+                        <h3 class="text-xd text-bold"><i class="ri-arrow-right-s-line"></i> Producteurs individuels</h3>
+                        <p class="text-sm">Pour planifier, décider et améliorer le rendement</p>
                     </li>
                     <li class="target">
-                        <h3 class="text-sm text-bold"><i class="ri-checkbox-blank-circle-line"></i> Coopératives agricoles</h3>
-                        <p class="text-xm">Pour mieux organiser la production et les adhérents</p>
+                        <h3 class="text-xd text-bold"><i class="ri-arrow-right-s-line"></i> Coopératives agricoles</h3>
+                        <p class="text-sm">Pour mieux organiser la production et les adhérents</p>
                     </li>
                     <li class="target">
-                        <h3 class="text-sm text-bold"><i class="ri-checkbox-blank-circle-line"></i> Acheteurs et transformateurs</h3>
-                        <p class="text-xm">Pour suivre l’évolution des prix et anticiper les achats</p>
+                        <h3 class="text-xd text-bold"><i class="ri-arrow-right-s-line"></i> Acheteurs et transformateurs</h3>
+                        <p class="text-sm">Pour suivre l’évolution des prix et anticiper les achats</p>
                     </li>
                     <li class="target">
-                        <h3 class="text-sm text-bold"><i class="ri-checkbox-blank-circle-line"></i> ONG et institutions agricoles</h3>
-                        <p class="text-xm">Pour obtenir des données fiables et accompagner les communautés</p>
+                        <h3 class="text-xd text-bold"><i class="ri-arrow-right-s-line"></i> ONG et institutions agricoles</h3>
+                        <p class="text-sm">Pour obtenir des données fiables et accompagner les communautés</p>
                     </li>
                 </ul>
             </div>
             <div class="audience-img-wrapper">
-                <img src="assets/img/audience.png" width="1600" height="600" alt="AgriConnect Africa">
+                <img src="assets/img/audience.avif" width="1600" height="600" loading="lazy" alt="AgriConnect Africa">
             </div>
         </div>
     </section>
 
     <section class="testimonials-section">
         <div class="wrapper flow-md">
-            <h2 class="text-md text-bold text-center">Ils utilisent AgriConnect Africa</h2>
+            <h2 class="text-lg text-bold text-center">Ils utilisent AgriConnect Africa</h2>
             <ul class="testimonial-list">
                 <li class="testimonial">
-                    <div>
-                        <h3 class="text-sm text-bold">Mamadou</h3>
-                        <span class="text-xs">Producteur à Sikasso (Mali)</span>
+                    <div class="testimonial-profile">
+                        <img src="assets/img/testimonial.avif" width="300" height="300" loading="lazy" alt="Mamadou">
+                        <div>
+                            <h3 class="text-xd text-bold">Mamadou</h3>
+                            <span class="text-xs">Producteur à Sikasso (Mali)</span>
+                        </div>
                     </div>
-                    <p class="text-xm">
+                    <p class="text-sm">
                         “Avec les prévisions météo localisées, j’ai réussi à semer au bon moment. Résultat : +22% de rendement sur mon maïs cette saison.”
                     </p>
                 </li>
                 <li class="testimonial">
-                    <div>
-                        <h3 class="text-sm text-bold">Awa</h3>
-                        <span class="text-xs">Membre d’une coopérative à Bobo-Dioulasso (Burkina Faso)</span>
+                    <div class="testimonial-profile">
+                        <img src="assets/img/testimonial2.avif" width="300" height="300" loading="lazy" alt="Awa">
+                        <div>
+                            <h3 class="text-xd text-bold">Awa</h3>
+                            <span class="text-xs">Membre d’une coopérative à Bobo-Dioulasso (Burkina Faso)</span>
+                        </div>
                     </div>
-                    <p class="text-xm">
+                    <p class="text-sm">
                         “Le suivi des prix m’a permis de négocier correctement mes ventes. Nous avons augmenté nos revenus dès le premier mois.”
                     </p>
                 </li>
                 <li class="testimonial">
-                    <div>
-                        <h3 class="text-sm text-bold">Koffi</h3>
-                        <span class="text-xs">Riziculteur à Dabou (Côte d’Ivoire)</span>
+                    <div class="testimonial-profile">
+                        <img src="assets/img/testimonial3.avif" width="300" height="300" loading="lazy" alt="Awa">
+                        <div>
+                            <h3 class="text-xd text-bold">Koffi</h3>
+                            <span class="text-xs">Riziculteur à Dabou (Côte d’Ivoire)</span>
+                        </div>
                     </div>
-                    <p class="text-xm">
+                    <p class="text-sm">
                         “Les conseils agronomiques sont clairs et faciles à appliquer. Je recommande à tous les jeunes agriculteurs.”
                     </p>
                 </li>
@@ -229,21 +266,21 @@
 
     <section class="cta-section">
         <div class="wrapper flow">
-            <h2 class="text-md text-bold text-center">Faites le choix d’une agriculture moderne, connectée et durable</h2>
-            <p class="text-sm text-center">Accédez à des données fiables, optimisez vos décisions et participez à la transformation agricole en Afrique</p>
+            <h2 class="text-lg text-bold text-center">Faites le choix d’une agriculture <br>moderne, connectée et durable</h2>
+            <p class="text-xd text-center">Accédez à des données fiables, optimisez vos décisions et participez à la transformation agricole en Afrique</p>
             <a href="#" class="btn btn-primary">Découvrir AgriConnect Africa</a>
         </div>
     </section>
 
     <section class="map-section">
         <div class="wrapper flow">
-            <h2 class="text-md text-bold text-center">Une vision claire de l’agriculture africaine</h2>
-            <p class="text-sm text-center">
-                Visualisez d’un coup d’œil les zones agricoles majeures, les tendances climatiques et les opportunités de culture à travers toute l’Afrique de l’Ouest. Notre carte interactive (présentation statique) offre un aperçu intuitif des principales informations utiles aux producteurs et organisations
+            <h2 class="text-lg text-bold text-center">Une vision claire de l’agriculture africaine</h2>
+            <p class="text-xd text-center">
+                Visualisez d’un coup d’œil les zones agricoles majeures, les tendances climatiques et les opportunités de culture à travers toute l’Afrique de l’Ouest
             </p>
             <div class="map-wrapper">
                 <iframe
-                    width="425" height="350"
+                    width="425" height="350" title="Carte OpenStreetMap indiquant l’emplacement de notre entreprise"
                     src="https://www.openstreetmap.org/export/embed.html?bbox=-8.020019531250002%2C12.63506197686334%2C-8.006222248077394%2C12.64221221528308&amp;layer=mapnik&amp;marker=12.638637121084221%2C-8.013120889663696">
                 </iframe>
             </div>
@@ -253,47 +290,47 @@
     <footer>
         <div class="wrapper">
             <div class="logo flow-xs">
-                <h3 class="text-sm text-bold">AgriConnect Africa</h3>
-                <p class="text-xm">
+                <h3 class="text-xd text-bold">AgriConnect Africa</h3>
+                <p class="text-sm">
                     Accélérer la modernisation agricole en Afrique grâce à des données fiables, compréhensibles et accessibles à tous
                 </p>
             </div>
 
             <div class="quick-links">
-                <h3 class="text-sm text-bold">Liens rapides</h3>
-                <a href="#" class="link-alt text-xm">Accueil</a>
-                <a href="#" class="link-alt text-xm">Fonctionnalités</a>
-                <a href="#" class="link-alt text-xm">Données Agricoles</a>
-                <a href="#" class="link-alt text-xm">Coopératives</a>
-                <a href="#" class="link-alt text-xm">À propos</a>
+                <h3 class="text-xd text-bold">Liens rapides</h3>
+                <a href="#" class="link-alt text-sm">Accueil</a>
+                <a href="#" class="link-alt text-sm">Fonctionnalités</a>
+                <a href="#" class="link-alt text-sm">Données Agricoles</a>
+                <a href="#" class="link-alt text-sm">Coopératives</a>
+                <a href="#" class="link-alt text-sm">À propos</a>
             </div>
 
             <div class="ressources">
-                <h3 class="text-sm text-bold">Ressources</h3>
-                <a href="#" class="link-alt text-xm">Guides agronomiques</a>
-                <a href="#" class="link-alt text-xm">Rapports & analyses</a>
-                <a href="#" class="link-alt text-xm">Données de marché</a>
-                <a href="#" class="link-alt text-xm">FAQ</a>
+                <h3 class="text-xd text-bold">Ressources</h3>
+                <a href="#" class="link-alt text-sm">Guides agronomiques</a>
+                <a href="#" class="link-alt text-sm">Rapports & analyses</a>
+                <a href="#" class="link-alt text-sm">Données de marché</a>
+                <a href="#" class="link-alt text-sm">FAQ</a>
             </div>
 
             <div class="contact flow-xs">
-                <h3 class="text-sm text-bold">Contact</h3>
+                <h3 class="text-xd text-bold">Contact</h3>
                 <p class="social-links text">
                     <a href="#" aria-label="Facebook contact" class="link-alt ri-facebook-circle-fill"></a>
                     <a href="#" aria-label="LinkedIn contact" class="link-alt ri-linkedin-box-fill"></a>
                     <a href="#" aria-label="Twitter contact" class="link-alt ri-twitter-x-fill"></a>
                     <a href="#" aria-label="YouTube contact" class="link-alt ri-youtube-fill"></a>
                 </p>
-                <p class="text-xm">
+                <p class="text-sm">
                     <span>Email:</span>
                     <a href="#" class="link-alt">contact@agriconnect.af</a>
                 </p>
-                <p class="text-xm">
+                <p class="text-sm">
                     <span>Téléphone:</span>
                     <a href="#" class="link-alt">+223 76 00 00 00</a>
                 </p>
             </div>
-            <p class="mention text-center text-sm">© 2025 AgriConnect Africa — Tous droits réservés.</p>
+            <p class="mention text-center text-xd">© 2025 AgriConnect Africa — Tous droits réservés.</p>
         </div>
     </footer>
 
